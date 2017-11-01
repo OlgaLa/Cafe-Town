@@ -3,9 +3,7 @@ package base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.LoginPage;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -21,7 +19,7 @@ public class TestBase {
     protected WebDriver driver;
     protected LoginPage loginPage;
 
-    @BeforeMethod
+    @BeforeTest
     public void setUp() {
 
         String browser = System.getProperty("browser") != null ? System.getProperty("browser").toLowerCase() : "chrome";
@@ -40,9 +38,15 @@ public class TestBase {
         loginPage = new LoginPage(driver);
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         driver.close();
+    }
+
+    @AfterMethod
+    public void cleanUp() {
+        driver.get(URL);
+        loginPage = new LoginPage(driver);
     }
 
 }

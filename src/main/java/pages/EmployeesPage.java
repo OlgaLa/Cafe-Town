@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.part.Header;
 
 import java.security.PublicKey;
 
@@ -34,10 +35,12 @@ public class EmployeesPage extends PageBase {
     }
 
     public boolean checkEditButtonIsDisplayed() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CREATE_BUTTON));
         return driver.findElement(EDIT_BUTTON).isDisplayed();
     }
 
     public boolean checkDeleteButtonIsDisplayed() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(CREATE_BUTTON));
         return driver.findElement(DELETE_BUTTON).isDisplayed();
     }
 }
