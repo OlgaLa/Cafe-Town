@@ -19,7 +19,7 @@ public class TestBase {
     protected WebDriver driver;
     protected LoginPage loginPage;
 
-    @BeforeTest
+    @BeforeClass
     public void setUp() {
 
         String browser = System.getProperty("browser") != null ? System.getProperty("browser").toLowerCase() : "chrome";
@@ -38,7 +38,7 @@ public class TestBase {
         loginPage = new LoginPage(driver);
     }
 
-    @AfterTest
+    @AfterClass
     public void tearDown() {
         driver.close();
     }

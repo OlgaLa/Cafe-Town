@@ -8,17 +8,13 @@ import pages.part.Header;
  */
 public abstract class PageBase {
 
-    private final Header HEADER;
     protected WebDriver driver;
+    protected ActionBot actionBot;
 
     public PageBase(WebDriver driver) {
+        actionBot = new ActionBot(driver);
         this.driver = driver;
-        HEADER = new Header(driver);
     }
 
     public WebDriver getDriver() { return driver; }
-
-    public Header getHeader() {
-        return HEADER;
-    }
 }

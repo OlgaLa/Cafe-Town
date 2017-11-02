@@ -22,33 +22,30 @@ public class LoginPage extends PageBase {
     public static final By VALIDATION_MESSAGE = get("LoginPage.ValidationMessage");
 
     private static final Log LOG = LogFactory.getLog(LoginPage.class);
-    private WebDriverWait wait = new WebDriverWait(driver, 15);
 
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
+    public LoginPage(WebDriver driver) { super(driver); }
 
     private LoginPage enterUsername(String username) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(USERNAME_FIELD));
-        driver.findElement(USERNAME_FIELD).sendKeys(username);
+        actionBot.waitFor(USERNAME_FIELD);
+        actionBot.sendKeys(USERNAME_FIELD, username);
         return this;
     }
 
     private LoginPage enterPassword(String password) {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(PASSWORD_FIELD));
-        driver.findElement(PASSWORD_FIELD).sendKeys(password);
+        actionBot.waitFor(PASSWORD_FIELD);
+        actionBot.sendKeys(PASSWORD_FIELD, password);
         return this;
     }
 
     public LoginPage clickLoginButton() {
-        driver.findElement(LOGIN_BUTTON).click();
+        actionBot.click(LOGIN_BUTTON);
         return new LoginPage(driver);
     }
 
     public EmployeesPage loginValid(String username, String password) throws InterruptedException {
         enterUsername(username);
         enterPassword(password);
-        driver.findElement(LOGIN_BUTTON).click();
+        actionBot.click(LOGIN_BUTTON);
         return new EmployeesPage(driver);
     }
 
@@ -59,13 +56,13 @@ public class LoginPage extends PageBase {
     }
 
     public boolean checkLoginButtonIsDisplayed() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(LOGIN_BUTTON));
+        actionBot.waitFor(LOGIN_BUTTON);
         return driver.findElement(LOGIN_BUTTON).isDisplayed();
     }
 
     public String getValidationMessage(){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(VALIDATION_MESSAGE));
-        return driver.findElement(VALIDATION_MESSAGE).getText();
+        actionBot.waitFor(VALIDATION_MESSAGE);
+        return actionBot.read(VALIDATION_MESSAGE);
     }
 
 }

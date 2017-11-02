@@ -1,5 +1,6 @@
 package pages.part;
 
+import base.PageBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,18 +13,16 @@ import static helpers.Locators.get;
 /**
  * Created by Olga Lapanovich on 31.10.2017.
  */
-public class Header {
+public class Header extends PageBase{
 
-    private WebDriver driver;
     private static final By LOGOUT_BUTTON = get("Header.LogoutButton");
     private static final By GREETING_TEXT = get("Header.GreetingText");
-//    private WebDriverWait wait = new WebDriverWait(driver, 15);
 
-    public Header(WebDriver driver) { this.driver = driver; }
+    public Header(WebDriver driver) { super(driver); }
 
     public LoginPage clickLogoutButton() {
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(LOGOUT_BUTTON));
-        driver.findElement(LOGOUT_BUTTON).click();
+        actionBot.waitFor(GREETING_TEXT);
+        actionBot.click(LOGOUT_BUTTON);
         return new LoginPage(driver);
     }
 
@@ -32,6 +31,8 @@ public class Header {
     }
 
     public String getGreetingText() {
-        return driver.findElement(GREETING_TEXT).getText();
+        return actionBot.read(GREETING_TEXT);
     }
 }
+
+
