@@ -21,6 +21,6 @@ Additional parameters:
 * run tests which allow to specific group: `-Dgroup=login`
 
 Example: `mvn clean test -Dbrowser=firefox -Dsuite=LoginSuite.xml` 
-Run Login tests suite in FireFox
+ --> run Login tests suite in FireFox
 
 3. `allure serve /target/allure-reports/` to generate report 
