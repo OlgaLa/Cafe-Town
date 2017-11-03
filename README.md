@@ -14,13 +14,12 @@
 
 # How to run the tests in the terminal: 
 1. Go to the project folder
-2. `mvn clean test` to run tests
+2. `mvn clean test -Dsurefire.suiteXmlFiles=AllTestsSuite.xml` to run all tests
 Additional parameters: 
 * run tests in a specific browser(chrome is default): `-Dbrowser=chrome firefox`
-* run a specific test suite: `-Dsuite=LoginSuite.xml` (All possible suites are in the folder /src/test/resources/)
-* run tests which belong to a specific group: `-Dgroup=login`
+* run a specific test suite: `-Dsurefire.suiteXmlFiles=LoginSuite.xml`
 
-Example: `mvn clean test -Dbrowser=firefox -Dsuite=LoginSuite.xml` 
+Example: `mvn clean test -Dsurefire.suiteXmlFiles=LoginSuite.xml -Dbrowser=firefox` 
  --> run Login tests suite in FireFox
 
 3. `allure serve allure-results` to generate report 
