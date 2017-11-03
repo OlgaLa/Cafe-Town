@@ -28,9 +28,9 @@ public class TestBase {
                 break;
             default:
                 driver = new ChromeDriver();
+                driver.manage().window().maximize();
                 break;
         }
-        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
         driver.get(URL);
         loginPage = new LoginPage(driver);
@@ -38,7 +38,7 @@ public class TestBase {
 
     @AfterClass
     public void tearDown() {
-        driver.close();
+        driver.quit();
     }
 
     @AfterMethod
