@@ -17,10 +17,10 @@
 2. `mvn clean test` to run tests
 Additional parameters: 
 * run tests in a specific browser(chrome is default): `-Dbrowser=chrome firefox`
-* run a specific test suite: `-Dsuite=LoginSuite.xml` (All possible suites are in the folder /src/test/resources/)
+* run a specific test suite: `-Dsurefire.suiteXmlFiles=LoginSuite.xml`
 * run tests which belong to a specific group: `-Dgroup=login`
 
-Example: `mvn clean test -Dbrowser=firefox -Dsuite=LoginSuite.xml` 
+Example: `mvn clean test -Dsurefire.suiteXmlFiles=LoginSuite.xml -Dbrowser=firefox` 
  --> run Login tests suite in FireFox
 
 3. `allure serve allure-results` to generate report 
