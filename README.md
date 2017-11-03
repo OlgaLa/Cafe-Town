@@ -1,6 +1,6 @@
 # Cafe-Town
 
-Before running tests:
+# Before running tests:
 1. Make sure that browser drivers are set in the system properties 
 * Download *chrome* or *firefox* driver
 * Unzip it in any folder 
@@ -12,7 +12,7 @@ Before running tests:
 2. (Optional) Install allure comanline to generate reports. You can find info how to do this here: https://docs.qameta.io/allure/latest/#_installing_a_commandline
 
 
-How to run the tests in the terminal: 
+# How to run the tests in the terminal: 
 1. Go to the project folder
 2. `mvn clean test` to run tests
 Additional parameters: 
