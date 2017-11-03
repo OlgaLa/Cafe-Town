@@ -5,10 +5,10 @@
 * Download *chrome* or *firefox* driver
 * Unzip it in any folder 
 * For Windows: 
-** Type *advanced system settings* in the search box (beside the Windows start button), clicks View advanced system settings.
-** Select *Advance tab*, clicks *Environment Variables*
-** In System variables, find PATH, clicks edit and append path to the folder with drivers to the end.
-** Click OK
+  * Type *advanced system settings* in the search box (beside the Windows start button), clicks View advanced system settings.
+  * Select *Advance tab*, clicks *Environment Variables*
+  * In System variables, find PATH, clicks edit and append path to the folder with drivers to the end.
+  * Click OK
 2. (Optional) Install allure comanline to generate reports. You can find info how to do this here: https://docs.qameta.io/allure/latest/#_installing_a_commandline
 
 
