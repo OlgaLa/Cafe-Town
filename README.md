@@ -23,4 +23,4 @@ Additional parameters:
 Example: `mvn clean test -Dbrowser=firefox -Dsuite=LoginSuite.xml` 
  --> run Login tests suite in FireFox
 
-3. `allure serve /target/allure-reports/` to generate report 
+3. `allure serve allure-results` to generate report 
