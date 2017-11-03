@@ -9,7 +9,7 @@
   * Select *Advance tab*, clicks *Environment Variables*
   * In System variables, find PATH, clicks edit and append path to the folder with drivers to the end.
   * Click OK
-2. (Optional) Install allure comanline to generate reports. You can find info how to do this here: https://docs.qameta.io/allure/latest/#_installing_a_commandline
+2. (Optional) Install *allure comanline* to generate reports. You can find info how to do this here: https://docs.qameta.io/allure/latest/#_installing_a_commandline
 
 
 # How to run the tests in the terminal: 
