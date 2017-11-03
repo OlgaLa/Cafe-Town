@@ -32,6 +32,7 @@ public class EmployeesTest extends InternalPageTest<EmployeesPage> {
         String name = firstName + " " + lastName;
         EmployeeCreationPage employeeCreationPage = pageUnderTest.clickCreateButton();
         EmployeesPage employeesPage = employeeCreationPage.createEmployee(firstName, lastName, startDate, email).deleteByName(name);
+        Thread.sleep(2000);
         Assert.assertFalse(employeesPage.checkEmployeeInList(name), "Employee is in the list");
     }
 }

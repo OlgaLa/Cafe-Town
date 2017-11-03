@@ -54,6 +54,5 @@ public class ActionBot {
         }
         Alert alert = driver.switchTo().alert();
         alert.accept();
-//        driver.findElement(By.xpath("//body")).sendKeys(Keys.RETURN);
     }
 }
