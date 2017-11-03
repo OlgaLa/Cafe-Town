@@ -1,7 +1,6 @@
 package base;
 
 import org.openqa.selenium.WebDriver;
-import pages.part.Header;
 
 /**
  * Created by Olga Lapanovich on 31.10.2017.
@@ -16,5 +15,4 @@ public abstract class PageBase {
         this.driver = driver;
     }
 
-    public WebDriver getDriver() { return driver; }
 }

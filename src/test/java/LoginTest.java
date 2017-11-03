@@ -1,11 +1,12 @@
 import base.TestBase;
 
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.EmployeesPage;
-import pages.LoginPage;
+import ru.yandex.qatools.allure.annotations.Features;
 import ru.yandex.qatools.allure.annotations.TestCaseId;
 
 import java.util.UUID;
@@ -22,9 +23,9 @@ public class LoginTest extends TestBase {
 
     SoftAssert softAssert = new SoftAssert();
 
-    @Test(groups = {"smoke", "login"})
+    @Test
     @TestCaseId("LO-1")
-    @Feature("Login")
+    @Feature("Valid Login")
     public void loginTest() throws InterruptedException {
         employeesPage=loginPage.loginValid(USERNAME, PASSWORD);
         softAssert.assertTrue(employeesPage.getHeader().checkLogoutButtonIsDisplayed(), "Logout button is not displayed");
@@ -33,18 +34,18 @@ public class LoginTest extends TestBase {
 
     }
 
-    @Test(groups = {"login"})
+    @Test
     @TestCaseId("LO-6")
-    @Feature("Login")
+    @Features("Login with invalid username")
     public void loginWithInvalidUsername() throws InterruptedException {
         String usernameInvalid = UUID.randomUUID().toString();
         loginPage.loginInvalid(usernameInvalid, PASSWORD);
         Assert.assertEquals(loginPage.getValidationMessage(), EXP_VALIDATION_MESSAGE );
     }
 
-    @Test(groups = {"login"})
+    @Test
     @TestCaseId("LO-7")
-    @Feature("Login")
+    @Features("Login with invalid password")
     public void loginWithInvalidPassword_Fails() throws InterruptedException {
         String invalidPassword = UUID.randomUUID().toString();
         loginPage.loginInvalid(USERNAME, invalidPassword);

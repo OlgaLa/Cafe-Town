@@ -1,7 +1,7 @@
 import helpers.EmployeeDataProvider;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
-import helpers.EmployeeDataProvider;
 import org.testng.annotations.Test;
 import pages.EmployeeCreationPage;
 import pages.EmployeesPage;
@@ -17,18 +17,18 @@ public class EmployeeCreationTest extends InternalPageTest<EmployeeCreationPage>
         return page.clickCreateButton();
     }
 
-    @Test(dataProviderClass = EmployeeDataProvider.class, dataProvider = "createNewDataProvider", groups = {"employee"})
+    @Test(dataProviderClass = EmployeeDataProvider.class, dataProvider = "createNewDataProvider")
     @TestCaseId("CE-2")
-    @Feature("Create an employee")
+    @Feature("Create a new employee")
     public void createEmployeeTest(String firstName, String lastName, String startDate, String email) {
         String name = firstName + " " + lastName;
         EmployeesPage page = pageUnderTest.createEmployee(firstName, lastName, startDate, email);
         Assert.assertTrue(page.checkEmployeeInList(name), "Employee is not in the list");
     }
 
-    @Test(dataProviderClass = EmployeeDataProvider.class, dataProvider = "createNewDataProvider", groups = {"employee"})
+    @Test(dataProviderClass = EmployeeDataProvider.class, dataProvider = "createNewDataProvider")
     @TestCaseId("CE-5")
-    @Feature("Create an employee")
+    @Feature("Cancel employee creation")
     public void cancelEmployeeCreationTest(String firstName, String lastName, String startDate, String email) {
         String name = firstName + " " + lastName;
         pageUnderTest.fillFields(firstName, lastName, startDate, email);

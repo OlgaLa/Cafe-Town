@@ -1,11 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
 <suite name="Login test suite">
     <test name="Login test suit">
-        <groups>
-            <run>
-                <include name="login"/>
-            </run>
-        </groups>
         <classes>
             <class name="LoginTest"/>
         </classes>

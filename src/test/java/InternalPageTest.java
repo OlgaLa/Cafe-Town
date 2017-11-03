@@ -2,6 +2,7 @@ import base.InternalPage;
 
 import base.TestBase;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,7 +30,7 @@ public abstract class InternalPageTest<TPage extends InternalPage> extends TestB
         pageUnderTest = setCurrentPage(givenImLoggedIn());
     }
 
-    @Test(groups = {"logout"})
+    @Test
     @TestCaseId("LO-2")
     @Feature("Logout")
     public void logoutTest() throws InterruptedException {
