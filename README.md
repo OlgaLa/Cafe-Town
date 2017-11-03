@@ -18,7 +18,7 @@
 Additional parameters: 
 * run tests in a specific browser(chrome is default): `-Dbrowser=chrome firefox`
 * run a specific test suite: `-Dsuite=LoginSuite.xml` (All possible suites are in the folder /src/test/resources/)
-* run tests which allow to specific group: `-Dgroup=login`
+* run tests which belong to a specific group: `-Dgroup=login`
 
 Example: `mvn clean test -Dbrowser=firefox -Dsuite=LoginSuite.xml` 
  --> run Login tests suite in FireFox
