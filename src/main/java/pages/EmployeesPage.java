@@ -66,11 +66,6 @@ public class EmployeesPage extends InternalPage {
         if (elementByName != null) {
             elementByName.click();
             actionBot.clickAndConfirm(DELETE_BUTTON);
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
         return new EmployeesPage(driver);
     }

@@ -1,9 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
-<suite name="Login test suite">
-    <test name="Login test suit">
+<suite name="Employee test suite">
+    <test name="EmployeeTest">
         <classes>
             <class name="LoginTest"/>
             <class name="InternalPageTest"/>
+            <class name="EmployeesTest"/>
+            <class name="EmployeeCreationTest"/>
         </classes>
     </test>
 </suite>
