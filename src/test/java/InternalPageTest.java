@@ -1,13 +1,8 @@
 import base.InternalPage;
 
 import base.TestBase;
-import io.qameta.allure.Feature;
-import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import pages.EmployeesPage;
-import ru.yandex.qatools.allure.annotations.TestCaseId;
 
 
 /**
@@ -28,16 +23,6 @@ public abstract class InternalPageTest<TPage extends InternalPage> extends TestB
     @BeforeMethod
     public void init() throws InterruptedException {
         pageUnderTest = setCurrentPage(givenImLoggedIn());
-    }
-
-    @Test
-    @TestCaseId("LO-2")
-    @Feature("Logout")
-    public void logoutTest() throws InterruptedException {
-        Assert.assertEquals(pageUnderTest.getHeader().getGreetingText(), "Hello " + USERNAME);
-        Thread.sleep(1000);
-        loginPage = pageUnderTest.logout();
-        Assert.assertTrue(loginPage.checkLoginButtonIsDisplayed());
     }
 
     protected abstract TPage setCurrentPage(EmployeesPage page);

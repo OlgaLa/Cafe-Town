@@ -3,7 +3,6 @@
     <test name="Login test suit">
         <classes>
             <class name="LoginTest"/>
-            <class name="InternalPageTest"/>
         </classes>
     </test>
 </suite>
