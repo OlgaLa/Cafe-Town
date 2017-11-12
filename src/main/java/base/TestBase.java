@@ -31,7 +31,7 @@ public class TestBase {
                 driver.manage().window().maximize();
                 break;
         }
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get(URL);
         loginPage = new LoginPage(driver);
     }

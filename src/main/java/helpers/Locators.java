@@ -25,18 +25,9 @@ public class Locators {
         }
     }
 
-    public static String title(String pageName) {
-        return locators.getProperty(pageName);
-    }
-
     public static By get(String locatorName) {
         String propertyValue = locators.getProperty(locatorName);
         return getLocator(propertyValue);
-    }
-
-    public static By get(String locatorName, String parameter) {
-        String propertyValue = locators.getProperty(locatorName);
-        return getLocator(String.format(propertyValue, parameter));
     }
 
     private static By getLocator(String locator) {

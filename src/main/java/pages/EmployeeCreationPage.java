@@ -60,19 +60,16 @@ public class EmployeeCreationPage extends InternalPage {
         return new EmployeesPage(driver);
     }
 
-    public EmployeesPage createEmployee(String firstName, String lastName, String startDate, String email) {
-        enterFirstName(firstName);
-        enterLastName(lastName);
-        enterStartDate(startDate);
-        enterEmail(email);
-        actionBot.click(ADD_BUTTON);
-        return new EmployeesPage(driver);
-    }
-
     public void fillFields(String firstName, String lastName, String startDate, String email) {
         enterFirstName(firstName);
         enterLastName(lastName);
         enterStartDate(startDate);
         enterEmail(email);
+    }
+
+    public EmployeesPage createEmployee(String firstName, String lastName, String startDate, String email) {
+        fillFields(firstName, lastName, startDate, email);
+        actionBot.click(ADD_BUTTON);
+        return new EmployeesPage(driver);
     }
 }
